@@ -52,9 +52,6 @@
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            alert('Submited');
-        },
-        onStepChanged: function () {
             let arrInput = document.querySelectorAll ('fieldset input, fieldset select');
 
             let userInput = {};
@@ -70,6 +67,9 @@
                 content += `<tr><td>${key}</td>  <td>${userInput[key]}</td></tr>`;
             }
             document.querySelector('#userInfo').innerHTML = content;
+        },
+        onStepChanged: function () {
+            return true;
         }
     });
 
